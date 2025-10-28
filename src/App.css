@@ -10,7 +10,6 @@
 
 .App-header {
   background-color: #979CB9;
-  /* height: 75px; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -18,49 +17,49 @@
   color: white;
 }
 
-/* .content {
-  background-color: #D9D9D9; 
-  margin: 20px 20px 20px 20px;
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding: 20px; 
-}
 
-.content .photo{
-  width: 30%;
-  position: relative;
-  left: 33%;
-}
- 
-.content .text{
-  position: relative;
-  font-size: 1.5rem;
-  text-align: center;
-  max-width: 800px; 
-
-}
- */
 .content {
   background-color: #D9D9D9;
   margin: 20px;
   display: flex;
-  flex-direction: row;          /* Элементы в строку */
-  align-items: center;          /* Вертикальное выравнивание по центру */
-  justify-content: space-between; /* Распределение с отступами */
-  padding: 30px;                /* Отступы внутри, чтобы фон не прилипал */
-  gap: 30px;                    /* Пространство между текстом и фото */
+  flex-direction: row;          
+  align-items: center;          
+  justify-content: space-between; 
+  padding: 30px;                
+  gap: 30px;                    
 }
 
 .content .text {
   font-size: 1.5rem;
-  text-align: left;             /* Текст по левому краю (или center — как хочешь) */
-  max-width: 60%;               /* Ограничиваем ширину текста */
-  flex: 1;                      /* Занимает доступное пространство */
+  text-align: left;             
+  max-width: 60%;               
+  flex: 1;                      
 }
 
 .content .photo {
-  width: 30%;                   /* Фиксированная ширина фото */
-  max-width: 300px;             /* Ограничение на больших экранах */
-  height: auto;                 /* Сохраняем пропорции */
+  width: 30%;                 
+  max-width: 300px;            
+  height: auto;                
+}
+
+.header-down{
+  background-color: #979CB9;
+  width: 100%;
+}
+
+
+.header-down .num{
+  width: 2.5rem;
+}
+
+.header-down .wha{
+  width: 3.4rem;
+}
+
+.header-down .tel{
+  width: 2.5rem;
+}
+
+.header-down .text{
+  background-color: white;
 }
