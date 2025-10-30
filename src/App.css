@@ -1,5 +1,16 @@
+.poiret-one-regular {
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {
@@ -17,17 +28,24 @@
   color: white;
 }
 
+.App-header,
+.header-down {
+  flex-shrink: 0;
+}
 
 .content {
   background-color: #D9D9D9;
   margin: 20px;
+  padding: 30px;
   display: flex;
-  flex-direction: row;          
-  align-items: center;          
-  justify-content: space-between; 
-  padding: 30px;                
-  gap: 30px;                    
-}
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-sizing: border-box;
+  flex: 1;
+  min-height: 0;
+} 
 
 .content .text {
   font-size: 1.5rem;
@@ -37,8 +55,7 @@
 }
 
 .content .photo {
-  width: 30%;                 
-  max-width: 300px;            
+  width: 40%;                            
   height: auto;                
 }
 
@@ -60,6 +77,8 @@
   width: 2.5rem;
 }
 
-.header-down .text{
-  background-color: white;
+.header-down text{
+  font-size: 24px;
+  color: white;
+  
 }
