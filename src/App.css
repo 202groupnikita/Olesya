@@ -11,6 +11,7 @@
   flex-direction: column;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -38,47 +39,100 @@
   margin: 20px;
   padding: 30px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  box-sizing: border-box;
   flex: 1;
   min-height: 0;
 } 
 
-.content .text {
-  font-size: 1.5rem;
-  text-align: left;             
-  max-width: 60%;               
-  flex: 1;                      
+.content .photo{
+  width: 759px;
+  height: 869px;
 }
 
-.content .photo {
-  width: 40%;                            
-  height: auto;                
+
+.content .text {
+  font-family: "Poiret One", sans-serif;
+  font-size: 2.5rem;
+  text-align: center; 
+  max-width: 100%;
+  flex: 1;
+  letter-spacing: 5.5px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 20px;              
 }
+
+.content .rose {
+  width: 27%; 
+  height: auto;
+}
+
 
 .header-down{
   background-color: #979CB9;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 12px 20px;
+  box-sizing: border-box;
 }
 
 
-.header-down .num{
-  width: 2.5rem;
+.header-down .contact{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin: -2px;
 }
 
-.header-down .wha{
-  width: 3.4rem;
+
+.header-down .whatsapp{
+  transform: scale(1.08);
+
 }
 
-.header-down .tel{
-  width: 2.5rem;
-}
 
 .header-down text{
   font-size: 24px;
   color: white;
-  
+  white-space: nowrap;
+  margin: 0%;
+}
+
+
+.slider-container{
+  flex: 1;
+}
+
+
+.slick-dots {
+  bottom: 10% !important; /* Размещаем точки ниже */
+  display: flex !important;
+  justify-content: center;
+  gap: 27px;
+  right: 20%;
+}
+
+
+.slick-dots li button {
+  width: 30px !important; /* Большие точки */
+  height: 30px !important;
+}
+
+
+.slick-dots li button:before {
+  width: 30px !important;
+  height: 30px !important;
+  background: #000000 !important;
+  border-radius: 50% !important;
+}
+
+
+.slick-dots li.slick-active button:before {
+  background: #000 !important;
+  transform: scale(1.2);
 }
