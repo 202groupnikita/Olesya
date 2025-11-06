@@ -1,8 +1,8 @@
-.poiret-one-regular {
+  .poiret-one-regular {
   font-family: "Poiret One", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
+  }
 
 
 .App {
@@ -14,11 +14,13 @@
   overflow-x: hidden;
 }
 
+
 .App-logo {
   height: 50px;
   width: 167px;
   pointer-events: none;
 }
+
 
 .App-header {
   background-color: #979CB9;
@@ -27,14 +29,16 @@
   align-items: center;
   justify-content: center;
   color: white;
-}
+ }
 
-.App-header,
-.header-down {
+
+ .App-header,
+ .header-down {
   flex-shrink: 0;
-}
+ }
 
-.content {
+
+ .content {
   background-color: #D9D9D9;
   margin: 20px;
   padding: 30px;
@@ -42,17 +46,18 @@
   align-items: center;
   flex: 1;
   min-height: 0;
-} 
+ } 
 
-.content .photo{
+
+ .content .photo{
   width: 759px;
   height: 869px;
-}
+ }
 
 
-.content .text {
+ .content .text {
   font-family: "Poiret One", sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   text-align: center; 
   max-width: 100%;
   flex: 1;
@@ -61,13 +66,33 @@
   display: flex;
   flex-direction: column; 
   align-items: center;    
-  gap: 20px;              
+  gap: max(20px, 3vh); 
+  /* background-color: red; */
+  margin-top: 10%;
+  position: relative;
+  min-height: 500px;
+ }
+
+
+ .content .rose {
+  width: min(100%, 300px); 
+  height: auto;
+  position: absolute;
+  top: 85%;
+ }
+
+
+.additional-content {
+  background-color: #D9D9D9;
+  margin: 20px;
+  padding: 60px 30px;
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.content .rose {
-  width: 27%; 
-  height: auto;
-}
+
 
 
 .header-down{
@@ -92,7 +117,7 @@
 
 .header-down .whatsapp{
   transform: scale(1.08);
-
+  margin-top: 0.2%;
 }
 
 
@@ -119,20 +144,100 @@
 
 
 .slick-dots li button {
-  width: 30px !important; /* Большие точки */
-  height: 30px !important;
+  width: 26px !important; /* Большие точки */
+  height: 26px !important;
 }
 
 
 .slick-dots li button:before {
-  width: 30px !important;
-  height: 30px !important;
-  background: #000000 !important;
+  content: '' !important; 
+  width: 26px !important;
+  height: 26px !important;
+  background: #000 !important;
   border-radius: 50% !important;
+  opacity: 1 !important;  
 }
 
 
 .slick-dots li.slick-active button:before {
-  background: #000 !important;
+  background: #8C8AA6 !important;
   transform: scale(1.2);
+}
+
+/* Стили для анимированных карточек */
+.hover-card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.card-content.hovered {
+  transform: rotateY(180deg);
+}
+
+.card-image,
+.card-text {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* .card-image {
+  background-color: #f0f0f0;
+} */
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-text {
+  background-color: #D9D9D9;
+  transform: rotateY(180deg);
+  color: #333;
+  font-family: "Poiret One", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Контейнер для карточек */
+.cards-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "Poiret One", sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
 }
