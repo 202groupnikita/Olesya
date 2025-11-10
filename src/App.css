@@ -1,8 +1,8 @@
-  .poiret-one-regular {
+.poiret-one-regular {
   font-family: "Poiret One", sans-serif;
   font-weight: 400;
   font-style: normal;
-  }
+}
 
 
 .App {
@@ -14,13 +14,11 @@
   overflow-x: hidden;
 }
 
-
 .App-logo {
   height: 50px;
   width: 167px;
   pointer-events: none;
 }
-
 
 .App-header {
   background-color: #979CB9;
@@ -29,16 +27,14 @@
   align-items: center;
   justify-content: center;
   color: white;
- }
+}
 
-
- .App-header,
- .header-down {
+.App-header,
+.header-down {
   flex-shrink: 0;
- }
+}
 
-
- .content {
+.content {
   background-color: #D9D9D9;
   margin: 20px;
   padding: 30px;
@@ -46,18 +42,17 @@
   align-items: center;
   flex: 1;
   min-height: 0;
- } 
+} 
 
-
- .content .photo{
+.content .photo{
   width: 759px;
   height: 869px;
- }
+}
 
 
- .content .text {
+.content .text {
   font-family: "Poiret One", sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 2.5rem;
   text-align: center; 
   max-width: 100%;
   flex: 1;
@@ -66,33 +61,13 @@
   display: flex;
   flex-direction: column; 
   align-items: center;    
-  gap: max(20px, 3vh); 
-  /* background-color: red; */
-  margin-top: 10%;
-  position: relative;
-  min-height: 500px;
- }
-
-
- .content .rose {
-  width: min(100%, 300px); 
-  height: auto;
-  position: absolute;
-  top: 85%;
- }
-
-
-.additional-content {
-  background-color: #D9D9D9;
-  margin: 20px;
-  padding: 60px 30px;
-  min-height: 900px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 20px;              
 }
 
-
+.content .rose {
+  width: 27%; 
+  height: auto;
+}
 
 
 .header-down{
@@ -117,7 +92,7 @@
 
 .header-down .whatsapp{
   transform: scale(1.08);
-  margin-top: 0.2%;
+
 }
 
 
@@ -164,67 +139,24 @@
   transform: scale(1.2);
 }
 
-/* Стили для анимированных карточек */
-.hover-card {
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-  cursor: pointer;
-}
 
-.card-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 10px;
-}
-
-.card-content.hovered {
-  transform: rotateY(180deg);
-}
-
-.card-image,
-.card-text {
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+.additional-content {
+  background-color: #D9D9D9;
+  margin: 20px;
+  padding: 60px 30px;
+  min-height: 900px;
   box-sizing: border-box;
 }
 
-/* .card-image {
-  background-color: #f0f0f0;
-} */
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.card-text {
-  background-color: #D9D9D9;
-  transform: rotateY(180deg);
-  color: #333;
-  font-family: "Poiret One", sans-serif;
-  font-size: 1.5rem;
-  text-align: center;
-  line-height: 1.4;
-}
-
-/* Контейнер для карточек */
 .cards-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-title {
@@ -232,12 +164,118 @@
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 50px;
-  color: #333;
 }
 
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+
+.cards-row {
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  justify-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Обёртка одной карточки + подпись */
+.service-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 426px; /* Максимум — как в ТЗ */
+}
+
+.hover-card {
+  width: 426px;
+  height: 265px;
+  border-radius: 82px; /* 🔥 Вот твой радиус! */
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0; /* Запрещает сжиматься в flex/grid */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.card-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: "Poiret One", sans-serif;
+  font-size: clamp(1.1rem, 4vw, 1.5rem); /* Адаптивный шрифт */
+  line-height: 1.4;
+  color: #979CB9;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.hover-card:hover .card-image {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+.hover-card:hover .card-text-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Подпись под карточкой */
+.card-label {
+  margin-top: 12px;
+  font-family: "Poiret One", sans-serif;
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .cards-row {
+    flex-wrap: wrap;
+  }
+
+  .hover-card {
+    width: 280px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-row {
+    gap: 15px;
+  }
+
+  .hover-card {
+    width: 100%;
+    max-width: 280px;
+    height: 360px;
+  }
+
+  .card-label {
+    font-size: 1.1rem;
+    white-space: normal;
+  }
 }

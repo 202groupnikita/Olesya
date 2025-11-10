@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Slider from "react-slick";
 import logo from './logo.svg';
@@ -52,32 +53,37 @@ function App() {
 };
 
 const hoverCards = [
-    {
-      image: weddings,
-      text: "Шеф-повар Ольга - создание гастрономических впечатлений",
-      altText: "Шеф-повар Ольга"
-    },
-    {
-      image: receptions,
-      text: "Элегантные банкеты и корпоративные обеды",
-      altText: "Банкетный стол" 
-    },
-    {
-      image: lunches,
-      text: "Высокий уровень сервиса и индивидуальный подход",
-      altText: "Сервировка"
-    },
-    {
-      image: pie,
-      text: "Шеф-повар Ольга - создание гастрономических впечатлений",
-      altText: "Шеф-повар Ольга"
-    },
-    {
-      image: banquets,
-      text: "Шеф-повар Ольга - создание гастрономических впечатлений",
-      altText: "Шеф-повар Ольга"
-    },
-  ];
+  {
+    image: weddings,
+    text: "Ваш идеальный день — от закусок до десерта",
+    label: "Свадьбные торжества",
+    altText: "Свадебный банкет"
+  },
+  {
+    image: receptions,
+    text: "Элегантно, вкусно, без границ — для любого события",
+    label: "Фуршеты",
+    altText: "Фуршетный стол"
+  },
+  {
+    image: lunches,
+    text: "Горячие, сытные, вовремя — для офиса или дома",
+    label: "Обеды",
+    altText: "обед"
+  },
+  {
+    image: pie,
+    text: "Теплые, ароматные, с любовью — прямо к вам",
+    label: "Доставка пирогов",
+    altText: "Пироги"
+  },
+  {
+    image: banquets,
+    text: "Масштабно, роскошно, по вашему вкусу",
+    label: "Банкеты",
+    altText: "Праздничный банкет"
+  },
+];
 
   return (
   <div className="App">
@@ -100,20 +106,38 @@ const hoverCards = [
 
 
 <div className="additional-content">
-        <div className="cards-container">
-          <h2 className="section-title">Наши услуги</h2>
-          <div className="cards-grid">
-            {hoverCards.map((card, index) => (
-              <Service
-                key={index}
-                image={card.image}
-                text={card.text}
-                altText={card.altText}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+  <div className="cards-container">
+    <h2 className="section-title">Наши услуги</h2>
+  
+  {/* Верхний ряд: 3 карточки */}
+  <div className="cards-row">
+    {hoverCards.slice(0, 3).map((card, index) => (
+      <Service
+        key={index}
+        image={card.image}
+        text={card.text}
+        label={card.label}
+        altText={card.altText}
+      />
+    ))}
+    <h3>Меню</h3>
+  </div>
+</div>
+
+  {/* Нижний ряд: 2 карточки */}
+  <div className="cards-row">
+    {hoverCards.slice(3, 5).map((card, index) => (
+      <Service
+        key={index + 3}
+        image={card.image}
+        text={card.text}
+        label={card.label}
+        altText={card.altText}
+      />
+    ))}
+  </div>
+</div>
+
 
   <div className='header-down'>
   <text> Контакты </text>

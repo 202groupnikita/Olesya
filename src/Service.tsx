@@ -1,31 +1,25 @@
-import { useState } from "react";
+// Service.tsx
+import React from 'react';
 
 interface ServiceProps {
-    image: string;
-    text: string;
-    altText:string;
+  image: string;
+  text: string;          // текст, который появляется при наведении
+  label: string;         // подпись под карточкой (всегда видна)
+  altText?: string;
 }
 
-const Service: React.FC<ServiceProps> = ({ image, text, altText = "Image" }) => {
-    const [isHovered, setIsHovered] = useState(false);
-
-    return (
-        <div className='Service'
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
- <div className={`card-content ${isHovered ? 'hovered' : ''}`}>
-        {/* Кнопка-фотография */}
-        <div className="card-image">
-          <img src={image} alt={altText} />
-        </div>
-        {/* Текст появляется при наведении */}
-        <div className="card-text">
-          <p>{text}</p>
+const Service: React.FC<ServiceProps> = ({ image, text, label, altText = "" }) => {
+  return (
+    <div className="service-card-wrapper">
+      <div className="hover-card">
+        <img src={image} alt={altText} className="card-image" />
+        <div className="card-text-overlay">
+          {text}
         </div>
       </div>
+      <div className="card-label">{label}</div>
     </div>
-    )
+  );
 };
 
 export default Service;
